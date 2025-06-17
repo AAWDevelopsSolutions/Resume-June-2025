@@ -1,0 +1,346 @@
+* {
+    padding: 0; margin: 0; border: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #eed; 
+    color: #234;
+    font-family: arial;
+    padding: 8px;
+}
+
+.main-container {
+    display: flex;
+    justify-content: center;
+    margin: 10px;
+    padding: 20px 0px;
+    border: solid 5px #234;
+}
+.main-container h1 {
+    
+    color: #fdb515;
+    font-weight: small;
+    font-size: 2.0em;
+    margin: 10px;
+    border: none;
+    padding: 5px;
+    
+}
+
+.grid-container { 
+    border: solid 4px #fdb515; 
+    width: 95%;
+    max-width: 100%;
+    margin: 10px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-auto-rows: minmax(100px, auto);
+    grid-template-areas:
+    "hero hero hero hero"
+    "objective objective objective objective"
+    "skills skills skills skills"
+    "certificates endeavors endeavors endeavors"
+    "education education education education"
+    "passions passions passions passions"
+    "socials socials location location"
+}
+.grid-item {
+    background-color: lavender;
+    font-size: 1.5em;
+    font-weight: normal;
+    margin: 4px;
+    padding: 10px;
+    line-height: 1.35;
+}
+
+.hero {
+    grid-area: hero;
+    position: relative;
+    background: url(Costa_Rica.jpg) no-repeat center center;
+    background-size: cover;
+    width: 100%;
+    max-height: 400px;
+    padding: 20px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+}
+
+
+.intro {
+    grid-column: 1 / 3;
+    font-size: 2.0em;
+    color: #fdb515;
+    width: auto;
+    margin: 20px 10px;
+}
+
+.pic {
+    grid-column: 4 / 5;
+    margin-top: 10px;
+    padding: 10px;
+    background-color: #234;
+}
+
+.contact {
+    grid-column: 3 / 4;
+    margin-top: 20px;
+    padding-right: 20px;
+}
+
+.contact p {
+    font-size: 1.25em;
+    color: lavender;
+    margin-top: 10px;
+}
+
+.hero > * {
+    position: relative;
+    z-index: 1;
+}
+
+.grid-item .category, .category {
+    color: #234;
+    padding: 5px;
+    background-color: rgba(253, 181, 21, 0.5);
+    margin-top: 10px;
+    font-size: 1.1em;
+    text-decoration-line: underline;
+    text-decoration-color: #234;
+}
+
+.skill-set {
+    
+    padding-left: 20px;
+}
+
+.skills-list {
+    padding-top: 10px;
+    
+}
+
+.achievements {
+    display: inline-flex;
+    margin-top: auto;
+    padding: 25px;
+    list-style-type: none;
+    justify-self: center;
+}
+
+.achievements-list {
+    padding-left: 20px;
+    margin: auto;
+    font-size: .75em;
+    vertical-align: middle;
+
+}
+
+.endeavors-set {
+    padding: 25px;
+    margin: auto;
+}
+
+.endeavors-list {
+    padding-top: 10px;
+}
+
+.grid-item .category-II {
+    font-weight: bold;
+    font-style: italic;
+    white-space: nowrap;
+}
+.educations-set {
+    padding: 25px;
+    margin: auto;
+}
+.educations-list {
+  display: flex;                 
+  justify-content: space-between;
+  align-items: baseline;         
+  gap: 0.5rem;                 
+}
+
+.education-list .offset {
+  margin-left: auto; 
+  padding-right: 1.75rem;
+  white-space: nowrap;           
+}
+
+.passions-set {
+    padding: 25px;
+    text-decoration-style: none;
+}
+
+.passions-list {
+    padding-top: 10px;
+}
+
+.socials-set {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.socials-list {
+    margin: 0.5em 0;
+}
+
+.socials-button {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 5px;
+    padding: 5px;
+    width: 50%;
+    height: auto;
+    box-sizing: border-box;
+    background-color: #ffffff;
+    color:#fdb515;
+    font-size: 1.5em;
+    border-radius: 10px;
+    border: solid 1px #234;
+    text-decoration: none;
+}
+
+.socials-button img {
+    max-width: 50px;
+    height: auto;
+    display: block;
+}
+
+.locations-set img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 20px auto;
+        
+}
+.locations-set p {
+    background-color: #ffffff;
+    padding: 5px;
+    margin-top: 5px;
+    border-radius: 10px;
+    border: solid 1px #234;
+    text-align: center;
+    
+    
+}
+
+/*Media Queries*/
+
+@media (max-width: 768px) {
+    body, .main-container
+      
+    
+    .grid-container {
+        grid-template-columns: 1fr;
+        grid-template-areas: 
+        "hero"
+        "objective"
+        "skills"
+        "certificates"
+        "endeavors"
+        "education"
+        "passions"
+        "socials"
+        "location";
+    }   
+    .socials-button {
+        font-size: 1.2em;
+        padding: 3px;
+    }
+    .socials-button img {
+        max-width: 40px;
+    }
+}
+
+/* Media Print Command */
+
+@media print {
+  
+  html, body, .main-container, .grid-container {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    overflow: visible;
+  }
+  
+  
+  body {
+    background: #fff !important;
+    color: #000;
+  }
+  .grid-container, .grid-item, .main-container {
+    border: none;
+  }
+  
+  
+  .no-print, nav, footer {
+    display: none;
+  }
+  
+  
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+  
+  
+  body, .grid-item {
+    font-size: 12pt;  
+    margin-top: 25px;
+  }
+  
+  
+  .grid-container {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "hero"
+      "objective"
+      "skills"
+      "certificates"
+      "endeavors"
+      "education"
+      "passions"
+      "socials"
+      "location";
+  }
+}
+
+
+/* Grid Template areas */
+
+.objective {
+    grid-area: objective;
+}
+
+.skills {
+    grid-area: skills;
+    }
+
+.certificates {
+    grid-area: certificates;
+    
+}
+.endeavors {
+    grid-area: endeavors;
+}
+
+.education {
+    grid-area: education;
+}
+
+.passions {
+    grid-area: passions;
+}
+
+.socials {
+    grid-area: socials;
+   
+}
+
+.location {
+    grid-area: location;
+ 
+}
